@@ -162,11 +162,12 @@ body {
 .container main .card:last-child .user > div:last-child span:last-child {
     color: var(--Primary-Very-dark-grayish-blue-trans-5);
 }
-.container main .card h2 {
+.container main .card h1 {
     color: var(--Primary-White);
+    font-size: 1.5rem;
 }
-.container main .card:nth-child(3) h2,
-.container main .card:last-child h2 {
+.container main .card:nth-child(3) h1,
+.container main .card:last-child h1 {
     color: var(--Primary-Very-dark-grayish-blue);
 }
 .container main .card p {
