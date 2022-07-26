@@ -1,0 +1,178 @@
+/* Start Variables */
+:root {
+    --Primary-Moderate-violet: hsl(263, 55%, 52%);
+    --Primary-Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Primary-Very-dark-grayish-blue-trans-5: hsl(217, 19%, 35%, 50%);
+    --Primary-Very-dark-grayish-blue-trans-7: hsl(217, 19%, 35%, 70%);
+    --Primary-Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --Primary-White: hsl(0, 0%, 100%);
+    --Neutral-Light-gray: hsl(0, 0%, 81%);
+    --Neutral-Light-gray-transparent-5: hsla(0, 0%, 81%, 50%);
+    --Neutral-Light-gray-transparent-7: hsla(0, 0%, 81%, 70%);
+    --Neutral-Light-grayish-blue: hsl(210, 46%, 95%);
+}
+/* End Variables */
+/* Start Global Rueles */
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+.container {
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* End Global Rueles */
+body {
+    background-color:var(--Neutral-Light-grayish-blue);
+}
+.container main {
+    padding-top: 100px;
+}
+@media (min-width: 992px) {
+    .container main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, auto);
+        column-gap: 30px;
+    }
+    .container main .card:first-child {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    .container main .card:nth-child(2) {
+        grid-area: 2 / 3 / 3 / 5;
+    }
+    .container main .card:nth-child(3) {
+        grid-area: 2 / 1 / 3 / 3;
+    }
+    .container main .card:nth-child(4) {
+        grid-area: 1 / 3 / 2 / 5;
+    }
+    .container main .card:last-child {
+        grid-area: 3 / 1 / 4 / 5;  
+    }
+}
+@media (min-width: 1200px) {
+    .container main {
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .container main .card:first-child {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    .container main .card:nth-child(2),
+    .container main .card:nth-child(3) {
+        grid-area: unset;
+    }
+    .container main .card:nth-child(4) {
+        grid-area: 2 / 2 / 3 / 4;
+    }
+    .container main .card:last-child {
+        grid-area: 1 / 4 / 3 / 5;
+    }
+}
+.container main .card {
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px 0 hsl(0deg 0% 0% / 10%);
+}
+.container main .card:first-child {
+    background-color: var(--Primary-Moderate-violet);
+    position: relative;
+    z-index: 1;
+}
+.container main .card:first-child::before {
+    content: url(../images/bg-pattern-quotation.svg);
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 20px;
+}
+.container main .card:nth-child(2) {
+    background-color: var(--Primary-Very-dark-grayish-blue);
+}
+.container main .card:nth-child(3) {
+    background-color: var(--Primary-White);
+}
+.container main .card:nth-child(4) {
+    background-color: var(--Primary-Very-dark-blackish-blue);
+}
+.container main .card:last-child {
+    background-color: var(--Primary-White);
+}
+.container main .card .user {
+    display: flex;
+    align-items: center;
+}
+.container main .card:first-child .user .pic {
+    border: 3px solid var(--Neutral-Light-gray-transparent-5);
+}
+.container main .card:nth-child(4) .user .pic {
+    border: 3px solid var(--Primary-Moderate-violet);
+}
+.container main .card .user .pic {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.container main .card .user .pic img {
+    width: 100%;
+    border-radius: 50%;
+}
+.container main .card .user > div:last-child {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.container main .card .user > div:last-child span:first-child {
+    color: var(--Neutral-Light-gray);
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+.container main .card:nth-child(3) .user > div:last-child span:first-child,
+.container main .card:last-child .user > div:last-child span:first-child {
+    color: var(--Primary-Very-dark-grayish-blue);
+}
+.container main .card .user > div:last-child span:last-child {
+    color: var(--Neutral-Light-gray-transparent-5);
+    font-size: 0.9rem;
+}
+.container main .card:nth-child(3) .user > div:last-child span:last-child,
+.container main .card:last-child .user > div:last-child span:last-child {
+    color: var(--Primary-Very-dark-grayish-blue-trans-5);
+}
+.container main .card h2 {
+    color: var(--Primary-White);
+}
+.container main .card:nth-child(3) h2,
+.container main .card:last-child h2 {
+    color: var(--Primary-Very-dark-grayish-blue);
+}
+.container main .card p {
+    color: var(--Neutral-Light-gray-transparent-7);
+}
+.container main .card:nth-child(3) p,
+.container main .card:last-child p {
+    color: var(--Primary-Very-dark-grayish-blue-trans-7);
+}
